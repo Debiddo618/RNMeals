@@ -10,16 +10,19 @@ import React, { Component } from "react";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
 
-
-function CategoriesScreen({navigation}){
+function CategoriesScreen({ navigation }) {
   function renderCategoryItem(itemData) {
-    function pressHandler(){
-      navigation.navigate('MealsOverview', {
+    function pressHandler() {
+      navigation.navigate("MealsOverview", {
         categoryId: itemData.item.id,
       });
     }
     return (
-      <CategoryGridTile title={itemData.item.title} color={itemData.item.color} onPress={pressHandler} />
+      <CategoryGridTile
+        title={itemData.item.title}
+        color={itemData.item.color}
+        onPress={pressHandler}
+      />
     );
   }
 
@@ -29,12 +32,15 @@ function CategoriesScreen({navigation}){
       keyExtractor={(item) => item.id}
       renderItem={renderCategoryItem}
       numColumns={2}
+      style={styles.container}
     />
   );
 }
 
 const styles = StyleSheet.create({
-  paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  container: {
+    backgroundColor: "#3f2f25",
+  },
 });
 
 export default CategoriesScreen;
