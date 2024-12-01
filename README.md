@@ -14,3 +14,10 @@ A mobile application that allow users to select through meals and add them to th
 
 ![](./img/RNMeals1.png)
 ![](./img/RNMeals2.png)
+
+# How to open this app
+1. Clone this repository
+2. Open an iOS simulator using Xcode or Android simulator using Android Studio
+3. Inside the root directory of this repo, run `npm i`
+4. Then, run `npm start`
+5. Lastly, press `a` for Android or `i` for iOS
